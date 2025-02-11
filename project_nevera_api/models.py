@@ -40,12 +40,18 @@ class Food(models.Model):
     def __str__(self):
         return self.name + " " + self.quantity + " " + self.quantity_unit
 
+class KeyTerm(models.Model):
+    eng = models.CharField(primary_key=True)
+    cat = models.CharField()
+    esp = models.CharField()
+
 class Item(models.Model):
     id = models.AutoField(primary_key=True)
     expirationDate = models.DateField(blank=True, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     food = models.ForeignKey(Food, on_delete=models.CASCADE)
     refrigerator = models.ForeignKey(Refrigerator, on_delete=models.CASCADE)
+    keyTerm = models.ForeignKey(KeyTerm, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.id

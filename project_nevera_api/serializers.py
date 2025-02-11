@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Refrigerator, Food, Item
+from .models import User, Refrigerator, Food, Item, KeyTerm
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -16,6 +16,11 @@ class FoodSerializer(serializers.HyperlinkedModelSerializer):
         model = Food
         fields = ["id", "name", "quantity", "quantity_unit"]
 
+class KeyTermSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = KeyTerm
+        fields = ["eng", "cat", "esp"]
+        
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Item
