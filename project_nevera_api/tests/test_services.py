@@ -39,3 +39,10 @@ class ServiceTestCase(TestCase):
         self.assertEqual(response, ["Pecorino Romano Cheese"])
         self.assertEqual(len(responses.calls), 1)
         self.assertEqual(responses.calls[0].request.url, api_url)
+
+
+    def test_translate_array(self):
+        array = ['Acesulfame', 'Achi', 'Acorn', 'Acorn Squash', 'Afang', 'African Pear', 'African Star Apple', 'Agar', 'Agave Syrup', 'Aidan Fruit', 'Aji Amarillo', 'Ajwain', 'Ají Dulce', 'Akamu Paste', 'Akpi', 'Alcoholic Beverages', 'Alfalfa Sprouts', 'Allspice', 'Almond', 'Almond Butter', 'Almond Extract', 'Almond Flour', 'Almond Oil', 'Almond Paste', 'Amaranth', 'Amchoor', 'Anchovy', 'Anchovy Paste', 'Anise', 'Annatto', 'Apple', 'Apple Cider', 'Applesauce', 'Apricot', 'Aquafaba', 'Arrowroot', 'Artichoke', 'Arugula']
+        result = self.service.translate_array(array)
+        self.assertEqual(len(array), len(result[0]))
+        self.assertEqual(len(array), len(result[1]))
