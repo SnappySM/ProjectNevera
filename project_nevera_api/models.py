@@ -42,8 +42,8 @@ class Food(models.Model):
 
 class KeyTerm(models.Model):
     eng = models.CharField(primary_key=True)
-    cat = models.CharField()
-    esp = models.CharField()
+    cat = models.CharField(blank=True, null=True)
+    esp = models.CharField(blank=True, null=True)
 
 class Item(models.Model):
     id = models.AutoField(primary_key=True)

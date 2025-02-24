@@ -9,7 +9,7 @@ router.register(r'users', user_view.UserViewset)
 router.register(r'refrigerators', refrigerator_view.RefrigeratorViewset)
 router.register(r'foods', food_view.FoodViewset)
 router.register(r'items', item_view.ItemViewset)
-router.register(r'keyterm', key_term_view.KeyTermViewset)
+router.register(r'keyterms', key_term_view.KeyTermViewset)
 
 urlpatterns = [
     path('', include(router.urls)),
