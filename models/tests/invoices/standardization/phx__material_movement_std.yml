@@ -1,0 +1,25 @@
+models:
+- columns:
+  - name: ERP_INSTANCE
+    tests:
+    - not_null:
+        config:
+          severity: error
+  - name: MATNR
+    tests:
+    - not_null:
+        config:
+          severity: error
+  - name: SOURCE_SYSTEM
+    tests:
+    - not_null:
+        config:
+          severity: error
+  meta:
+    domain: finance
+    layer: std
+    owner: fds
+    owner_team: Nico
+    source_system: adsf
+  name: phx__material_movement_std
+version: 2
